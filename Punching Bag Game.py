@@ -14,8 +14,6 @@ while Punching_Bag_Health == 0:
         Punching_Bag_Health = 75
     elif Difficulty == "Hard":
         Punching_Bag_Health = 100
-    else:
-        Punching_Bag_Health = 999
     
 
 Player_Health = [65]
@@ -52,15 +50,15 @@ for i in range(Rounds):
             Punching_Bag_Health = Punching_Bag_Health - 10
             print("OOPS! You missed")
         Rounds_left = Rounds - i
-        print(str(Rounds_left) + " Rounds Left!")
+        print(f"{Rounds_left} Rounds Left!")
 
 
-# This program uses rng and functions to simulate a punching bag video game. It is intended to entertain the user
+# This program uses an RNG and functions to simulate a punching bag video game. It is intended to entertain the user
 # The user inputs the Punching bag health, how many rounds they will fight for, and inputs if they want to keep fighting after every round. 
 # The output consists of telling the player how much damage they've dealt, how much health the punching bag has left, and how many rounds they have left.
 import random 
 
-print("Punching Bag: 'How Much Health Should I have?'")
+print("Punching Bag: 'How Much Health Should I Have?'")
 Difficulty = input("Low, Medium, or High : ")
 
 
@@ -79,8 +77,7 @@ while Punching_Bag_Health == 1:
         Punching_Bag_Health = 75
     elif Difficulty == ("high"):
         Punching_Bag_Health = 100
-    else:
-        Punching_Bag_Health = 99999999999999999999999999999999999
+
     
     
 

@@ -7,7 +7,7 @@ Player_damage = [0, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10]
 def Player_attacks():
     return random.choice(Player_damage)
 
-print("Punching Bag: 'How Much Health Should I Have?'")
+print("Punching Bag: 'How Much Health Should I Have?\nLow = 50 Health\nMedium = 75 Health\nHigh = 100 Health\nIn order to beat me, you must get my health to be exactly 0 by\nthe last round or else you lose.")
 Difficulty = input("Low, Medium, or High : ")
 
 
@@ -26,9 +26,6 @@ while Punching_Bag_Health == 1:
 Rounds = int(input("How many Rounds will you go for? : "))
 
 
-
-
-
 for i in range(Rounds):
     Choice = input("Start Round or Quit? Y/N ")
     if Choice == ("Y") or Choice == ("y"):
@@ -39,15 +36,15 @@ for i in range(Rounds):
             print("OOPS! You missed")
         elif Player_attacks() == 3:
             Punching_Bag_Health = Punching_Bag_Health - 3
-            print('\033[91m' + "------- 3 Damge -------" + '\033[0m')
+            print("------- 3 Damge -------")
             print("Punching bag: 'What was that? That was a puny attack you baby!! Do Better!!'")
         elif Player_attacks() == 5:
             Punching_Bag_Health = Punching_Bag_Health - 5
-            print('\033[91m' + "------- 5 Damge -------" + '\033[0m')
+            print("------- 5 Damge -------")
             print("Punching bag: 'That was a good one'!")
         else:
             Punching_Bag_Health = Punching_Bag_Health - 10
-            print('\033[91m' + "------- 10 Damge -------" + '\033[0m')
+            print("------- 10 Damge -------")
             print("Punching bag: 'That was a Great one'!")
     if Choice == ("N") or Choice == ("n"):
         print("Thank you for playing!")
@@ -56,6 +53,11 @@ for i in range(Rounds):
     Rounds_left = (Rounds - i) - 1
     print(str(Rounds_left) + " Rounds Left!")
     print("I have " + str(Punching_Bag_Health) + " Health left")
+    if Punching_Bag_Health <= 0:
+        print("The bag was destroyed. You went overboard! You lose!")
+        break
+    if Punching_Bag_Health == 0:
+        print("You beat me !")
     if Rounds == i + 1:
         if Punching_Bag_Health > 0:
             print("I win! You Lose!")
@@ -65,9 +67,6 @@ for i in range(Rounds):
             break
     else:
         continue
-    
-    if Punching_Bag_Health <= 0:
-        print("You beat me !")
-        break
-    else:
-        continue
+
+
+

@@ -3,7 +3,7 @@
 # The output consists of telling the player how much damage they've dealt, how much health the punching bag has left, and how many rounds they have left.
 import random 
 
-Player_damage = [0, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10]
+Player_damage = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 def Player_attacks():
     return random.choice(Player_damage)
 

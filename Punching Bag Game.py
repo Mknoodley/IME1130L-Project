@@ -3,11 +3,11 @@
 # The output consists of telling the player how much damage they've dealt, how much health the punching bag has left, and how many rounds they have left.
 import random 
 
-Player_damage = [0, 3, 3, 3, 5, 5, 5, 5, 5, 5, 10, 10, 10]
+Player_damage = [0, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10]
 def Player_attacks():
     return random.choice(Player_damage)
 
-print("Punching Bag: 'How Much Health Should I Have?\nLow = 50 Health\nMedium = 75 Health\nHigh = 100 Health\nIn order to beat me, you must get my health to be exactly 0 by\nthe last round or else you lose.")
+print("Punching Bag: 'How Much Health Should I Have?'\nLow = 50 Health\nMedium = 75 Health\nHigh = 100 Health\nIn order to beat me, you must get my health to be exactly 0 by\nthe last round or else you lose.")
 Difficulty = input("Low, Medium, or High : ")
 
 
@@ -53,11 +53,12 @@ for i in range(Rounds):
     Rounds_left = (Rounds - i) - 1
     print(str(Rounds_left) + " Rounds Left!")
     print("I have " + str(Punching_Bag_Health) + " Health left")
-    if Punching_Bag_Health <= 0:
-        print("The bag was destroyed. You went overboard! You lose!")
-        break
     if Punching_Bag_Health == 0:
         print("You beat me !")
+    if Punching_Bag_Health < 0:
+        print("The bag was destroyed. You went overboard! You lose!")
+        break
+    
     if Rounds == i + 1:
         if Punching_Bag_Health > 0:
             print("I win! You Lose!")
@@ -67,6 +68,5 @@ for i in range(Rounds):
             break
     else:
         continue
-
 
 

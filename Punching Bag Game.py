@@ -46,15 +46,18 @@ for i in range(Rounds):
             Punching_Bag_Health = Punching_Bag_Health - 10
             print("------- 10 Damge -------")
             print("Punching bag: 'That was a Great one'!")
-    if Choice == ("N") or Choice == ("n"):
+    elif Choice == ("N") or Choice == ("n"):
         print("Thank you for playing!")
         break
+    elif Choice == ("K"):
+        Punching_Bag_Health = 0
 
     Rounds_left = (Rounds - i) - 1
     print(str(Rounds_left) + " Rounds Left!")
     print("I have " + str(Punching_Bag_Health) + " Health left")
     if Punching_Bag_Health == 0:
-        print("You beat me !")
+        print("You beat me! You win!")
+        break
     if Punching_Bag_Health < 0:
         print("The bag was destroyed. You went overboard! You lose!")
         break
@@ -63,10 +66,3 @@ for i in range(Rounds):
         if Punching_Bag_Health > 0:
             print("I win! You Lose!")
             break
-        else:
-            print("You win!")
-            break
-    else:
-        continue
-
-
